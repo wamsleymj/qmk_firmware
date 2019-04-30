@@ -15,14 +15,6 @@
  */
 #include QMK_KEYBOARD_H
 
-enum {
-  TD_RGB_ALT = 0
-};
-
-qk_tap_dance_action_t tap_dance_actions[] = {
-  [TD_RGB_ALT] = ACTION_TAP_DANCE_DUAL_ROLE(KC_RALT, 2)
-};
-
 // stock hhkb as referenced by https://i.imgur.com/QoBTDHf.png 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -44,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,   KC_U,   KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSPC,
       KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,     KC_H,   KC_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT,
       KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, MO(1),
-      KC_TRNS, KC_LALT, KC_LGUI,                   LT(3, KC_SPC),                 KC_RGUI, TD(TD_RGB_ALT), KC_TRNS
+      KC_TRNS, KC_LALT, KC_LGUI,                   LT(2, KC_SPC),                 KC_RGUI, KC_RALT, KC_TRNS
       ),
 
     /* Keymap 1: (Function Layer)
@@ -53,9 +45,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------------------------------------------------------------
    * |Caps |   |   |   |   |   |   |   |Prt|Scr|Pau|Up |   |Reset|
    * |------------------------------------------------------------
-   * |       |VU-|VU+|MUT|>|||   |*  |/  |Hme|PgU|Lft|Rgt|       |
+   * |       |   |RWD|FFD|PLY|   |*  |/  |Hme|PgU|Lft|Rgt|       |
    * |------------------------------------------------------------
-   * |        |   |   |   |   |   |+  |_  |End|PgD|Dwn|      |   |
+   * |        |VU-|VU+|MUT|   |   |+  |_  |End|PgD|Dwn|      |   |
    * '-----------------------------------------------------------'
    *        |   |    |                        |    |    |
    *        `-------------------------------------------'
@@ -63,30 +55,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT(
       KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_INS, KC_DEL,
       KC_CAPS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSCR, KC_SLCK, KC_PAUS, KC_UP,   KC_TRNS, RESET,
-      KC_TRNS, KC_VOLD, KC_VOLU, KC_MUTE, KC_MPLY, KC_TRNS, KC_ASTR, KC_SLSH, KC_HOME, KC_PGUP, KC_LEFT, KC_RGHT, KC_TRNS,
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PLUS, KC_UNDS, KC_END,  KC_PGDN, KC_DOWN, KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_MRWD, KC_MFFD, KC_MPLY, KC_TRNS, KC_ASTR, KC_SLSH, KC_HOME, KC_PGUP, KC_LEFT, KC_RGHT, KC_TRNS,
+      KC_TRNS, KC_VOLD, KC_VOLU, KC_MUTE, KC_TRNS, KC_TRNS, KC_PLUS, KC_UNDS, KC_END,  KC_PGDN, KC_DOWN, KC_TRNS, KC_TRNS,
       KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                   KC_TRNS, KC_TRNS, KC_TRNS
-      ),
-
-   /* Keymap 2: (RGB Layer)
-   * ,-----------------------------------------------------------.
-   * |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
-   * |------------------------------------------------------------
-   * |     |   |   |   |   |   |   |   |   |   |   |   |   |     |
-   * |------------------------------------------------------------
-   * |       |   |   |   |   |   |   |   |   |   |   |   |       |
-   * |------------------------------------------------------------
-   * |        |   |   |   |   |   |   |   |   |   |   |      |   |
-   * '-----------------------------------------------------------'
-   *        |   |    |                        |    |Base|
-   *        `-------------------------------------------'
-   */
-  [2] = LAYOUT(
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-      KC_TRNS, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-      KC_TRNS, KC_TRNS, KC_TRNS, BL_DEC,  BL_TOGG, BL_INC,  BL_STEP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-      KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                   KC_TRNS, TO(0), KC_TRNS
       ),
 
   /* Keymap 3: (Navigation Layer)
@@ -95,18 +66,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------------------------------------------------------------
    * |     |   |   |   |   |   |   |   |Up |   |   |   |   |     |
    * |------------------------------------------------------------
-   * |       |VU-|VU+|MUT|>|||   |   |<- |Dwn| ->|   |   |       |
+   * |       |   |RWD|FFD|PLY|   |   |<- |Dwn| ->|   |   |       |
    * |------------------------------------------------------------
-   * |        |   |   |   |   |   |   |   |   |   |   |      |   |
+   * |        |VU-|VU+|MUT|   |   |   |   |   |   |   |      |   |
    * '-----------------------------------------------------------'
-   *        |   |    |                        |    |Base|
+   *        |   |    |                        |    |    |
    *        `-------------------------------------------'
    */
-  [3] = LAYOUT(
+  [2] = LAYOUT(
       KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_TRNS, KC_DEL,
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_UP,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-      KC_TRNS, KC_VOLD, KC_VOLU, KC_MUTE, KC_MPLY, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS, KC_TRNS, KC_TRNS,
-      KC_TRNS, KC_TRNS, KC_TRNS, BL_DEC,  BL_TOGG, BL_INC,  BL_STEP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_MRWD, KC_MFFD, KC_MPLY, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS, KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_VOLD, KC_VOLU, KC_MUTE, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
       KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                   KC_TRNS, KC_TRNS, KC_TRNS
       ),
 };
