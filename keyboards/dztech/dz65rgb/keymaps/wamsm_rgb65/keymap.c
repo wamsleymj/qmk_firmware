@@ -1,4 +1,4 @@
- b#include QMK_KEYBOARD_H
+ #include QMK_KEYBOARD_H
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	   * `----------------------------------------------------------------'
 	   */
 		[_LAYER1] = LAYOUT_65_ansi( /* FN */
-			KC_GESC,       KC_F1,    KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,  KC_F12,  KC_TRNS,   KC_TRNS,\
+			KC_GRAVE,       KC_F1,    KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,  KC_F12,  KC_TRNS,   KC_TRNS,\
 		    KC_TRNS,       RGB_TOG,  RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, KC_UP,   RGB_VAD, RGB_SPI,  RGB_SPD, KC_TRNS, RESET,    KC_TRNS,\
 			CTL_T(KC_CAPS),KC_TRNS,  KC_MRWD, KC_MFFD, KC_MPLY, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_RIGHT,KC_TRNS,  KC_TRNS,          EEP_RST,  KC_TRNS,\
 		    KC_LSFT,       KC_VOLD,  KC_VOLU, KC_MUTE, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,          KC_TRNS,  KC_HOME,\
