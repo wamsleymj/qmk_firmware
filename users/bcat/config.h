@@ -13,9 +13,15 @@
 #undef RGBLIGHT_VAL_STEP
 
 #define BACKLIGHT_LEVELS 7
+<<<<<<< HEAD
 #define RGVLIGHT_HUE_STEP 8
 #define RGVLIGHT_SAT_STEP 17
 #define RGVLIGHT_VAL_STEP 17
+=======
+#define RGBLIGHT_HUE_STEP 8
+#define RGBLIGHT_SAT_STEP 17
+#define RGBLIGHT_VAL_STEP 17
+>>>>>>> 8c1900a658b4f99c0201008b6832ea71e5e9396f
 
 /* Make mouse operation smoother. */
 #undef MOUSEKEY_DELAY

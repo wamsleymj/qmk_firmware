@@ -22,7 +22,11 @@ Hardware Availability: [Mercado Libre](https://articulo.mercadolibre.com.ar/MLA-
 
 |             | LED1 | LED2 |
 |-------------|------|------|
+<<<<<<< HEAD
 | Arduino pin | 8    | 9    |
+=======
+| Arduino pin | 9    | 8    |
+>>>>>>> 8c1900a658b4f99c0201008b6832ea71e5e9396f
 | QMK pin     | B5   | B4   |
 
 ### Compiling the Firmware
