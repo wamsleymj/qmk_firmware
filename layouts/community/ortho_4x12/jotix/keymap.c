@@ -15,7 +15,6 @@ enum layers {
 static bool is_ctl_pressed;
 static bool is_esc_pressed;
 static bool is_bspc_pressed;
->>>>>>> 8c1900a658b4f99c0201008b6832ea71e5e9396f
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -70,7 +69,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 uint32_t layer_state_set_user(uint32_t state) {
->>>>>>> 8c1900a658b4f99c0201008b6832ea71e5e9396f
   #ifdef JOTANCK_LEDS
   switch (biton32(state)) {
   case _LOWER:
@@ -116,12 +114,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   };
   return true;
 }
-<<<<<<< HEAD
-=======
 
 void matrix_scan_user(void) {
   if (is_ctl_pressed && is_esc_pressed && is_bspc_pressed) {
     reset_keyboard();
   }
 }
->>>>>>> 8c1900a658b4f99c0201008b6832ea71e5e9396f
