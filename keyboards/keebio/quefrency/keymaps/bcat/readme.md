@@ -8,13 +8,10 @@ cluster, and RGB controls in the function layer on the arrow/nav keys.
 
 ![Default layer layout](https://i.imgur.com/CU2fxDg.png)
 
+([KLE](http://www.keyboard-layout-editor.com/#/gists/60a262432bb340b37d364a4424f3037b))
+
 ## Function layer
 
-![Function layer layout](https://i.imgur.com/4R1F72M.png)
-<<<<<<< HEAD
+![Function layer layout](https://i.imgur.com/PGCbgtS.png)
 
-## Mouse layer
-
-![Mouse layer layout](https://i.imgur.com/LmGgJEG.png)
-=======
->>>>>>> 8c1900a658b4f99c0201008b6832ea71e5e9396f
+([KLE](http://www.keyboard-layout-editor.com/#/gists/59636898946da51f91fb290f8e078b4d))
