@@ -1,3 +1,3 @@
-# The default keymap for KBDPAD MKII
+# Personal layout for KBDPad MKII.
 
-Just a numpad. Top row from Cherry G80-3700
+Basic numpad.
