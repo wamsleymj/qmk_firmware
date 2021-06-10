@@ -1,5 +1,8 @@
-# MCU Name
+# MCU name
 MCU = STM32F072
+
+# Bootloader selection
+BOOTLOADER = stm32-dfu
 
 # Build Options
 #  change yes to no to disable
@@ -19,6 +22,7 @@ BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 
 WS2812_DRIVER = bitbang
-RGB_MATRIX_ENABLE = WS2812
+RGB_MATRIX_ENABLE = yes
+RGB_MATRIX_DRIVER = WS2812
 
 OLED_DRIVER_ENABLE = yes
